@@ -1,6 +1,9 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+// Custom addition - always use .env
+import 'dotenv/config'
+
 import * as express from "express";
 import * as defaultServer from "./default-server";
 

@@ -1,8 +1,13 @@
 FROM node:lts
 
-ADD ./api /home/node/app/
 WORKDIR /home/node/app
+ADD ./api .
+
+RUN npm install
+RUN npm run build
+
+EXPOSE 3000
 
 ENV NODE_ENV=production
-#EXPOSE 3000 2222
-#ENTRYPOINT ["init.sh"]
+
+CMD ["node", "./bin/script/server.js"]
