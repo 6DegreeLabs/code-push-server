@@ -1,6 +1,10 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+// To use
+// import "dotenv/config";
+
+console.log(`process env`, process.env);
 console.log("Prod secret?", process.env.JESSE_PROD);
 
 import * as express from "express";
