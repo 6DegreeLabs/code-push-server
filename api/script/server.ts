@@ -1,8 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-// Custom addition - always use .env
-import 'dotenv/config'
+console.log("Prod secret?", process.env.JESSE_PROD);
 
 import * as express from "express";
 import * as defaultServer from "./default-server";
