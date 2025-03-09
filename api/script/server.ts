@@ -1,17 +1,25 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-// To use
-// import "dotenv/config";
+const fs = require("fs");
 
-console.log(`process env`, process.env);
+let envStr = "";
+Object.keys(process.env).forEach((key) => {
+	envStr += `${key}=${process.env[key]}\n`;
+});
+
+console.log(`v19`);
+console.log(`process env`, envStr);
 console.log("Prod secret?", process.env.JESSE_PROD);
+
+fs.writeFileSync("env.txt", envStr);
+// import "dotenv/config";
 
 import * as express from "express";
 import * as defaultServer from "./default-server";
 
 const https = require("https");
-const fs = require("fs");
+
 
 defaultServer.start(function (err: Error, app: express.Express) {
   if (err) {
