@@ -5,5 +5,4 @@ set -e
 
 echo "Starting SSH ..."
 
-node ./bin/script/server.js
-
+node ./bin/script/server.js 2>&1 | tee out.log
